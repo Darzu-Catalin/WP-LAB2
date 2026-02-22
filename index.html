@@ -194,5 +194,65 @@
         </div>
     </section>
 
+    <!-- Footer / Contact -->
+    <footer id="contact" class="footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <h3 class="footer-logo">Asigvital</h3>
+                <p class="footer-desc">Partenerul tău de încredere pe piața asigurărilor din Moldova. Oferim protecție și siguranță pentru fiecare pas al drumului tău.</p>
+            </div>
+            <div class="footer-contact">
+                <h4 class="footer-heading">Contactează-ne</h4>
+                <p>📞 <a href="tel:+37379516908">079 516 908</a></p>
+                <p>📞 <a href="tel:+37369147500">069 147 500</a></p>
+                <p>✉️ <a href="mailto:asigvitalmoldova@gmail.com">asigvitalmoldova@gmail.com</a></p>
+            </div>
+            <div class="footer-social">
+                <h4 class="footer-heading">Rețele Sociale</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=100039724677250" target="_blank" class="social-icon" title="Facebook">f</a>
+                    <a href="https://wa.me/+37379516908" target="_blank" class="social-icon" title="WhatsApp">W</a>
+                    <a href="viber://chat?number=+37379516908" target="_blank" class="social-icon" title="Viber">V</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 BAR Asigvital SRL. Toate drepturile rezervate.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const track = document.querySelector('.carousel-track');
+        const cards = document.querySelectorAll('.testimonial-card');
+        const dotsContainer = document.getElementById('carouselDots');
+        let current = 0;
+
+        cards.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.classList.add('carousel-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.onclick = () => goTo(i);
+            dotsContainer.appendChild(dot);
+        });
+
+        function goTo(index) {
+            current = index;
+            track.style.transform = 'translateX(-' + (current * 100) + '%)';
+            document.querySelectorAll('.carousel-dot').forEach((d, i) => {
+                d.classList.toggle('active', i === current);
+            });
+        }
+
+        function moveCarousel(dir) {
+            let next = current + dir;
+            if (next < 0) next = cards.length - 1;
+            if (next >= cards.length) next = 0;
+            goTo(next);
+        }
+
+        setInterval(() => moveCarousel(1), 5000);
+    </script>
 </body>
 </html>
