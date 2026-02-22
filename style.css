@@ -428,6 +428,42 @@ a:hover {
     opacity: 0.9;
 }
 
+/* Partners Section */
+.partners {
+    background-color: var(--bg-white);
+    padding: 80px 0;
+}
+
+.partners .section-header {
+    margin-bottom: 48px;
+}
+
+.partners-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 48px 64px;
+}
+
+.partner-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.partner-item:hover {
+    transform: scale(1.05);
+}
+
+.partner-item img {
+    max-height: 90px;
+    max-width: 240px;
+    width: auto;
+    object-fit: contain;
+}
+
 /* Testimonials Section */
 .testimonials {
     background-color: var(--bg-light);
